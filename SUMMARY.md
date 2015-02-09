@@ -14,8 +14,6 @@
    * [布局](chapter3/layout.md)
    * [锚点](chapter3/anchor.md)
    * [坐标系](chapter3/coordinate-systens.md)
-   * [翻转的几何结构](chapter3/flipped-geometry.md)
-   * [Z坐标轴](chapter3/the-z-axis.md)
    * [Hit Testing](chapter3/hit-testing.md)
    * [自动布局](chapter3/automatic-layout.md)
    * [总结](chapter3/summary.md)
