@@ -12,8 +12,9 @@ iOS核心动画高级技巧
 
    译者为[AttackOnDobby](https://github.com/AttackOnDobby),(感谢他的付出！)
 
-   我[ZsIsMe](https://github.com/ZsIsMe)将译者的稿件搬运至gitbook上，方便大家查看。
+   我（[ZsIsMe](https://github.com/ZsIsMe)）将译者的稿件搬运至gitbook上，方便大家查看。
 
+如果在阅读过程中发现有什么问题，请到[这里](https://github.com/ZsIsMe/ios_core_animation_advanced_techniques)（本电子书在github上的地址）开issue，我会尽快改过来。
 
 2015.2.9 电子书在制作过程中，章节可能会不断添加和修改或者合并。
 
