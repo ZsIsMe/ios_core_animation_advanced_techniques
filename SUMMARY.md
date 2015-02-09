@@ -101,6 +101,7 @@
 * [高效绘图](chapter13/efficient-drawing.md)
    * [软件绘图](chapter13/software-drawing-vector-graphics.md)
    * [矢量图形](chapter13/catiledLayer.md)
+   * [脏矩形](chapter15/dirty-rectangles.md)
    * [异步绘制](chapter13/drawsasynchronously.md)
    * [总结](chapter13/summary.md)
 * [图像IO](chapter14/image-ioi.md)
