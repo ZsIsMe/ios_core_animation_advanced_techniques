@@ -1,6 +1,5 @@
-# CAScrollLayer
 
-
+##CAScrollLayer
 
 对于一个未转换的图层，它的`bounds`和它的`frame`是一样的，`frame`属性是由`bounds`属性自动计算而出的，所以更改任意一个值都会更新其他值。
 
