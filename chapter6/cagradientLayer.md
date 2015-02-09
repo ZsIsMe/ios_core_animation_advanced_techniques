@@ -1,4 +1,4 @@
-# CAGradientLayer
+##CAGradientLayer
 
 `CAGradientLayer`是用来生成两种或更多颜色平滑渐变的。用Core Graphics复制一个`CAGradientLayer`并将内容绘制到一个普通图层的寄宿图也是有可能的，但是`CAGradientLayer`的真正好处在于绘制使用了硬件加速。
 
@@ -54,22 +54,22 @@
 
 ```objective-c
 - (void)viewDidLoad {
-	[super viewDidLoad];
+  [super viewDidLoad];
 
-	//create gradient layer and add it to our container view
-	CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-	gradientLayer.frame = self.containerView.bounds;
-	[self.containerView.layer addSublayer:gradientLayer];
+  //create gradient layer and add it to our container view
+  CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+  gradientLayer.frame = self.containerView.bounds;
+  [self.containerView.layer addSublayer:gradientLayer];
 
-	//set gradient colors
-	gradientLayer.colors = @[(__bridge id)[UIColor redColor].CGColor, (__bridge id) [UIColor yellowColor].CGColor, (__bridge id)[UIColor greenColor].CGColor];
+  //set gradient colors
+  gradientLayer.colors = @[(__bridge id)[UIColor redColor].CGColor, (__bridge id) [UIColor yellowColor].CGColor, (__bridge id)[UIColor greenColor].CGColor];
 
-	//set locations
-	gradientLayer.locations = @[@0.0, @0.25, @0.5];
+  //set locations
+  gradientLayer.locations = @[@0.0, @0.25, @0.5];
 
-	//set gradient start and end points
-	gradientLayer.startPoint = CGPointMake(0, 0);
-	gradientLayer.endPoint = CGPointMake(1, 1);
+  //set gradient start and end points
+  gradientLayer.startPoint = CGPointMake(0, 0);
+  gradientLayer.endPoint = CGPointMake(1, 1);
 }
 ```
 
