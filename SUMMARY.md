@@ -27,7 +27,7 @@
    * [总结](chapter3/summary.md)
 * [视觉效果](chapter4/visual-effcts.md)
    * [圆角](chapter4/rounded-corners.md)
-   * [图层边框](chapter4/ayer-borders.m)
+   * [图层边框](chapter4/ayer-borders.md)
    * [阴影](chapter4/drop-shadows.md)
    * [阴影裁剪](chapter4/shadow-clipping.md)
    * [shadowPath属性](chapter4/the-shadowpath-property.md)
