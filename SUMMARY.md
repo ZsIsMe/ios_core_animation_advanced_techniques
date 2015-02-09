@@ -89,7 +89,6 @@
    * [动画速度](chapter10/animation-velocity.md) 
    * [自定义缓冲函数](chapter10/custom-easing-functions.md)
    * [总结](chapter10/summary.md)
-   
 * [基于定时器的动画](chapter11/timer-based-animation.md) 
    * [定时帧](chapter11/frame-timing.md)
    * [物理模拟](chapter11/physical-simulation.md)
