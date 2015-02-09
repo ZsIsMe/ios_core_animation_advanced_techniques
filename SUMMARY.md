@@ -38,7 +38,6 @@
    * [CATransformLayer](chapter6/catransformlayer.md)
    * [CAGradientLayer](chapter6/cagradientLayer.md)
    * [CAReplicatorLayer](chapter6/careplicatorLayer.md)
-   * [重复图层（Repeating Layers）](chapter6/repeating-layers.md)
    * [CAScrollLayer](chapter6/cascrollLayer.md)
    * [CATiledLayer](chapter6/catiledLayer.md)
    * [CAEmitterLayer](chapter6/caemitterlayer.md)
