@@ -21,8 +21,6 @@
    * [圆角](chapter4/rounded-corners.md)
    * [图层边框](chapter4/ayer-borders.md)
    * [阴影](chapter4/drop-shadows.md)
-   * [阴影裁剪](chapter4/shadow-clipping.md)
-   * [shadowPath属性](chapter4/the-shadowpath-property.md)
    * [图层蒙板](chapter4/layer-masking.md)
    * [拉伸过滤](chapter4/scaling-filters.md)
    * [组透明](chapter4/group-opacity.md)
