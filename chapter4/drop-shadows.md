@@ -22,4 +22,122 @@
 
 ![图4.6](./4.6.png)
 
+### 阴影裁剪
+
+
+&nbps;&nbsp;&nbsp;&nbsp;和图层边框不同，图层的阴影继承自内容的外形，而不是根据边界和角半径来确定。为了计算出阴影的形状，Core Animation会将寄宿图（包括子视图，如果有的话）考虑在内，然后通过这些来完美搭配图层形状从而创建一个阴影（见图4.7）。
+
+![图4.7](./4.7.png)
+
+图4.7 阴影是根据寄宿图的轮廓来确定的
+
+&nbps;&nbsp;&nbsp;&nbsp;当阴影和裁剪扯上关系的时候就有一个头疼的限制：阴影通常就是在Layer的边界之外，如果你开启了`masksToBounds`属性，所有从图层中突出来的内容都会被才剪掉。如果我们在我们之前的边框示例项目中增加图层的阴影属性时，你就会发现问题所在（见图4.8）.
+
+![图4.8](./4.8.png)
+
+图4.8 `maskToBounds`属性裁剪掉了阴影和内容
+
+&nbps;&nbsp;&nbsp;&nbsp;从技术角度来说，这个结果是可以是可以理解的，但确实又不是我们想要的效果。如果你想沿着内容裁切，你需要用到两个图层：一个只画阴影的空的外图层，和一个用`masksToBounds`裁剪内容的内图层。
+
+&nbps;&nbsp;&nbsp;&nbsp;如果我们把之前项目的右边用单独的视图把裁剪的视图包起来，我们就可以解决这个问题（如图4.9）.
+
+![图4.9](./4.9.png)
+
+图4.9 右边，用额外的阴影转换视图包裹被裁剪的视图
+
+&nbps;&nbsp;&nbsp;&nbsp;我们只把阴影用在最外层的视图上，内层视图进行裁剪。清单4.3是代码实现，图4.10是运行结果。
+
+清单4.3 用一个额外的视图来解决阴影裁切的问题
+
+```objective-c
+@interface ViewController ()
+
+@property (nonatomic, weak) IBOutlet UIView *layerView1;
+@property (nonatomic, weak) IBOutlet UIView *layerView2;
+@property (nonatomic, weak) IBOutlet UIView *shadowView;
+
+@end
+
+@implementation ViewController
+￼
+- (void)viewDidLoad
+{
+  [super viewDidLoad];
+
+  //set the corner radius on our layers
+  self.layerView1.layer.cornerRadius = 20.0f;
+  self.layerView2.layer.cornerRadius = 20.0f;
+
+  //add a border to our layers
+  self.layerView1.layer.borderWidth = 5.0f;
+  self.layerView2.layer.borderWidth = 5.0f;
+
+  //add a shadow to layerView1
+  self.layerView1.layer.shadowOpacity = 0.5f;
+  self.layerView1.layer.shadowOffset = CGSizeMake(0.0f, 5.0f);
+  self.layerView1.layer.shadowRadius = 5.0f;
+
+  //add same shadow to shadowView (not layerView2)
+  self.shadowView.layer.shadowOpacity = 0.5f;
+  self.shadowView.layer.shadowOffset = CGSizeMake(0.0f, 5.0f);
+  self.shadowView.layer.shadowRadius = 5.0f;
+
+  //enable clipping on the second layer
+  self.layerView2.layer.masksToBounds = YES;
+}
+
+@end
+```
+
+![图4.10](./4.10.png)
+
+图4.10 右边视图，不受裁切阴影的阴影视图。
+### shadowPath属性
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;我们已经知道图层阴影并不总是方的，而是从图层内容的形状继承而来。这看上去不错，但是实时计算阴影也是一个非常消耗资源的，尤其是图层有多个子图层，每个图层还有一个有透明效果的寄宿图的时候。
+
+&nbsp;&nbsp;&nbsp;&nbsp;如果你事先知道你的阴影形状会是什么样子的，你可以通过指定一个`shadowPath`来提高性能。`shadowPath`是一个`CGPathRef`类型（一个指向`CGPath`的指针）。`CGPath`是一个Core Graphics对象，用来指定任意的一个矢量图形。我们可以通过这个属性单独于图层形状之外指定阴影的形状。
+
+图4.11 展示了同一寄宿图的不同阴影设定。如你所见，我们使用的图形很简单，但是它的阴影可以是你想要的任何形状。清单4.4是代码实现。
+
+![图4.11](./4.11.png)
+
+图4.11 用`shadowPath`指定任意阴影形状
+
+清单4.4 创建简单的阴影形状
+
+```objective-c
+@interface ViewController ()
+
+@property (nonatomic, weak) IBOutlet UIView *layerView1;
+@property (nonatomic, weak) IBOutlet UIView *layerView2;
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad
+{
+  [super viewDidLoad];
+
+  //enable layer shadows
+  self.layerView1.layer.shadowOpacity = 0.5f;
+  self.layerView2.layer.shadowOpacity = 0.5f;
+
+  //create a square shadow
+  CGMutablePathRef squarePath = CGPathCreateMutable();
+  CGPathAddRect(squarePath, NULL, self.layerView1.bounds);
+  self.layerView1.layer.shadowPath = squarePath; CGPathRelease(squarePath);
+
+  ￼//create a circular shadow
+  CGMutablePathRef circlePath = CGPathCreateMutable();
+  CGPathAddEllipseInRect(circlePath, NULL, self.layerView2.bounds);
+  self.layerView2.layer.shadowPath = circlePath; CGPathRelease(circlePath);
+}
+@end
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;如果是一个矩形或者是圆，用`CGPath`会相当简单明了。但是如果是更加复杂一点的图形，`UIBezierPath`类会更合适，它是一个由UIKit提供的在CGPath基础上的Objective-C包装类。
+
+
 图4.6 大一些的阴影位移和角半径会增加图层的深度即视感
