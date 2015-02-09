@@ -69,7 +69,7 @@
    * [AVPlayerLayer](chapter6/avplayerlayer.md)
    * [总结](chapter6/summarry.md)
 * [隐式动画](chapter7/implicit-animations.md)
-   * [事务](chapter7/)
+   * [事务](chapter7/transactions.md)
    * [完成块](chapter7/completion-blocks.md)
    * [图层行为](chapter7/layer-actions.md)
    * [呈现与模型](chapter7/presentation-versus-model.md)
