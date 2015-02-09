@@ -1,4 +1,4 @@
-iOS核心动画高级技巧
+iOS Core Animation: Advanced Techniques中文译本
 =======
 
 
