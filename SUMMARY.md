@@ -8,7 +8,7 @@
    * [图层的能力](chapter1/layer-capabilities.md)
    * [使用图层](chapter1/working-with-layers.md)
    * [总结](chapter1/summary.md)
-* [寄宿图](chaapter2/the-Backing-Image.md)
+* [寄宿图](chapter2/the-Backing-Image.md)
    * [contents属性](chapter2/the-contents-image.md)
    * [contentsGravity](chapter2/contentgravity.md)
    * [contentsScale](chapter2/contentscale.md)
