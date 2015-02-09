@@ -1,5 +1,5 @@
-# CAReplicatorLayer
 
+##CAReplicatorLayer
 
 `CAReplicatorLayer`的目的是为了高效生成许多相似的图层。它会绘制一个或多个图层的子图层，并在每个复制体上应用不同的变换。看上去演示能够更加解释这些，我们来写个例子吧。
 
