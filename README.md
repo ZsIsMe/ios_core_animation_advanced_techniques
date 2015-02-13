@@ -11,7 +11,13 @@ iOS Core Animation: Advanced Techniques中文译本
 
    **翻译，喵~**
 
-   译者为[AttackOnDobby](https://github.com/AttackOnDobby),(感谢他的付出！)
+   译者为：
+   
+   [AttackOnDobby](https://github.com/AttackOnDobby)
+   
+   [evenluo](https://github.com/evenluo/)
+   
+   (排名不分先后，感谢他俩的付出！)
 
    我（[ZsIsMe](https://github.com/ZsIsMe)）将译者的稿件搬运至gitbook上，方便大家查看。
 
