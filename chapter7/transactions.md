@@ -12,8 +12,8 @@ Core Animation基于一个假设，说屏幕上的任何东西都可以（或者
 @interface ViewController ()
 
 @property (nonatomic, weak) IBOutlet UIView *layerView;
-@property (nonatomic, weak) IBOutlet CALayer *colorLayer;
-
+@property (nonatomic, weak) IBOutlet CALayer *colorLayer;/*热心人发现这里应该改为@property (nonatomic, strong)  CALayer *colorLayer;否则无法运行。
+*/
 @end
 
 @implementation ViewController
