@@ -108,7 +108,8 @@
 @interface ViewController ()
 
 @property (nonatomic, weak) IBOutlet UIView *layerView;
-@property (nonatomic, weak) IBOutlet CALayer *colorLayer;
+@property (nonatomic, weak) IBOutlet CALayer *colorLayer;/*热心人发现这里应该改为@property (nonatomic, strong)  CALayer *colorLayer;否则运行结果不正确。
+*/
 
 @end
 
