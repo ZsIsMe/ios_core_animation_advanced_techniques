@@ -1,7 +1,7 @@
 iOS Core Animation: Advanced Techniques中文译本
 =======
 
-[gitbook上的地址](https://www.gitbook.com/book/zsisme/ios-)
+[gitbook上的地址](https://zsisme.gitbooks.io/ios-/content/)
 
 本书翻译自：[iOS Core Animation: Advanced Techniques](http://www.amazon.com/iOS-Core-Animation-Advanced-Techniques-ebook/dp/B00EHJCORC/ref=sr_1_1?ie=UTF8&qid=1423192842&sr=8-1&keywords=Core+Animation+Advanced+Techniques)
 
